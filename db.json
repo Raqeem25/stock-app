@@ -1,0 +1,93 @@
+{
+  "stok": [
+    {
+      "id": "2089",
+      "kode": "BE-001200",
+      "jenis": "Elektronik",
+      "title": "ASUS Vivobook 14 (M1405)",
+      "body": 5,
+      "harga": 8000000,
+      "supplier": "PT.Asus",
+      "noPO": "PO-26102023-0001",
+      "tanggal": "2025-06-23",
+      "deskripsi": "Prosesor: Hingga AMD Ryzen™ 7 7730U Processor\nLayar: 14” 2.8K OLED NanoEdge display\nMemori: Hingga 16 GB DDR4\nPenyimpanan: Hingga 1 TB SSD",
+      "satuan": "unit",
+      "namaBarang": "ASUS Vivobook 14 (M1405)"
+    },
+    {
+      "kode": "ATK-002300",
+      "jenis": "Alat Tulis Kantor",
+      "title": "Kerta A4",
+      "body": 40,
+      "harga": 40000,
+      "supplier": "PT.Angkasa",
+      "noPO": "PO-26102023-0002",
+      "tanggal": "2025-06-23",
+      "deskripsi": "Ukuran kertas A4 memiliki dimensi 210 mm x 297 mm, setara dengan 8,27 inci x 11,69 inci. Untuk melakukan konversi dari milimeter ke inci, kita dapat menggunakan rasio 1 milimeter sama dengan 0,0393701 inci. Adapun ukuran kertas A4 dalam cm adalah 21 cm x 29,7",
+      "satuan": "pack",
+      "id": "4704",
+      "namaBarang": "Kerta A4"
+    },
+    {
+      "id": "3055",
+      "kode": "BE-001200",
+      "jenis": "Elektronik",
+      "title": "Samsung Galaxy A05s",
+      "body": 15,
+      "harga": 2025000,
+      "supplier": "PT.Samsung",
+      "noPO": "PO-26102023-0003",
+      "tanggal": "2025-06-23",
+      "deskripsi": "Qualcomm SM6225 Snapdragon 680 4G (6 nm)\nRAM 6GB/128GB\nBlack, Silver, Light Green, Violet\n6.7 Inches, 1080 x 2400 pixels, 5000 mAH\nTriple: 50 MP, f/1.8, (wide), AF, 2 MP, f/2.4, (macro), 2 MP, f/2.4, (depth)",
+      "satuan": "unit",
+      "namaBarang": "Samsung Galaxy A05s"
+    }
+  ],
+  "barang": [
+    {
+      "id": "1",
+      "kode": "BE-001200",
+      "jenis": "Elektronik"
+    },
+    {
+      "id": "2",
+      "kode": "ATK-002300",
+      "jenis": "Alat Tulis Kantor"
+    }
+  ],
+  "barangKeluar": [
+    {
+      "id": "f9b8",
+      "nomorTransaksi": "BK-20250623-001",
+      "namaBarang": "ASUS Vivobook 14 (M1405)",
+      "jumlah": 5,
+      "tanggal": "2025-06-23",
+      "supplier": "PT.Asus",
+      "keterangan": "Untuk para pimpinan",
+      "kodeBarang": "BE-001200",
+      "satuan": "unit"
+    },
+    {
+      "id": "290c",
+      "nomorTransaksi": "BK-20250623-002",
+      "namaBarang": "Kerta A4",
+      "jumlah": 10,
+      "tanggal": "2025-06-23",
+      "supplier": "PT.Angkasa",
+      "keterangan": "untuk bagian keuangan",
+      "kodeBarang": "ATK-002300",
+      "satuan": "pack"
+    },
+    {
+      "id": "1aa8",
+      "nomorTransaksi": "BK-20250623-003",
+      "namaBarang": "Samsung Galaxy A05s",
+      "jumlah": 5,
+      "tanggal": "2025-06-23",
+      "supplier": "PT.Samsung",
+      "keterangan": "Untuk inventaris Pimpinan",
+      "kodeBarang": "BE-001200",
+      "satuan": "unit"
+    }
+  ]
+}
