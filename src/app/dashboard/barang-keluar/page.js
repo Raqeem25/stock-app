@@ -41,11 +41,11 @@ export default function BarangKeluarPage() {
   const itemsPerPage = 5;
 
   useEffect(() => {
-    fetch("http://localhost:3001/stok")
+    fetch(`${process.env.NEXT_PUBLIC_API}/stok`)
       .then((res) => res.json())
       .then((data) => setStokList(data));
 
-    fetch("http://localhost:3001/barangKeluar")
+    fetch(`${process.env.NEXT_PUBLIC_API}/barangKeluar`)
       .then((res) => res.json())
       .then((data) => setRiwayat(data));
   }, []);
@@ -86,7 +86,7 @@ export default function BarangKeluarPage() {
       };
 
       const stokResponse = await fetch(
-        `http://localhost:3001/stok/${currentItem.id}`,
+        `${process.env.NEXT_PUBLIC_API}/stok/${currentItem.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -109,7 +109,7 @@ export default function BarangKeluarPage() {
       };
 
       const transaksiResponse = await fetch(
-        "http://localhost:3001/barangKeluar",
+        `${process.env.NEXT_PUBLIC_API}/barangKeluar`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

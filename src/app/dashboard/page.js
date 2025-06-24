@@ -32,8 +32,8 @@ export default function DashboardPage() {
     const fetchData = async () => {
       try {
         const [stokRes, barangKeluarRes] = await Promise.all([
-          fetch("http://localhost:3001/stok"),
-          fetch("http://localhost:3001/barangKeluar"),
+          fetch(`${process.env.NEXT_PUBLIC_API}/stok`),
+          fetch(`${process.env.NEXT_PUBLIC_API}/barangKeluar`),
         ]);
 
         const stok = await stokRes.json();

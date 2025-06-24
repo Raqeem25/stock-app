@@ -41,11 +41,11 @@ export default function BarangKeluarPage() {
   const itemsPerPage = 5;
 
   useEffect(() => {
-    fetch("http://localhost:3001/stok")
+    fetch(`${process.env.NEXT_PUBLIC_API}/stok`)
       .then((res) => res.json())
       .then((data) => setStokList(data));
 
-    fetch("http://localhost:3001/barangKeluar")
+    fetch(`${process.env.NEXT_PUBLIC_API}/barangKeluar`)
       .then((res) => res.json())
       .then((data) => setRiwayat(data));
   }, []);
@@ -100,7 +100,7 @@ export default function BarangKeluarPage() {
 
     try {
       // 1. Cari data stok yang sesuai
-      const stokResponse = await fetch("http://localhost:3001/stok");
+      const stokResponse = await fetch(`${process.env.NEXT_PUBLIC_API}/stok`);
       const stokList = await stokResponse.json();
       const stokItem = stokList.find(
         (stok) => stok.title === currentItem.namaBarang
@@ -121,7 +121,7 @@ export default function BarangKeluarPage() {
       }
 
       // 3. Update stok barang
-      await fetch(`http://localhost:3001/stok/${stokItem.id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API}/stok/${stokItem.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -131,7 +131,7 @@ export default function BarangKeluarPage() {
       });
 
       // 4. Update transaksi barang keluar
-      await fetch(`http://localhost:3001/barangKeluar/${currentItem.id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API}/barangKeluar/${currentItem.id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -150,8 +150,8 @@ export default function BarangKeluarPage() {
 
       // 5. Refresh data
       const [stokRes, keluarRes] = await Promise.all([
-        fetch("http://localhost:3001/stok"),
-        fetch("http://localhost:3001/barangKeluar"),
+        fetch(`${process.env.NEXT_PUBLIC_API}/stok`),
+        fetch(`${process.env.NEXT_PUBLIC_API}/barangKeluar`),
       ]);
       setStokList(await stokRes.json());
       setRiwayat(await keluarRes.json());
@@ -170,7 +170,7 @@ export default function BarangKeluarPage() {
 
       // 2. Kembalikan stok
       const stokResponse = await fetch(
-        `http://localhost:3001/stok/${stokItem.id}`,
+        `${process.env.NEXT_PUBLIC_API}/stok/${stokItem.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -185,7 +185,7 @@ export default function BarangKeluarPage() {
 
       // 3. Hapus transaksi
       const deleteResponse = await fetch(
-        `http://localhost:3001/barangKeluar/${item.id}`,
+        `${process.env.NEXT_PUBLIC_API}/barangKeluar/${item.id}`,
         {
           method: "DELETE",
         }
@@ -233,7 +233,7 @@ export default function BarangKeluarPage() {
       };
 
       const stokResponse = await fetch(
-        `http://localhost:3001/stok/${currentItem.id}`,
+        `${process.env.NEXT_PUBLIC_API}/stok/${currentItem.id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -256,7 +256,7 @@ export default function BarangKeluarPage() {
       };
 
       const transaksiResponse = await fetch(
-        "http://localhost:3001/barangKeluar",
+        `${process.env.NEXT_PUBLIC_API}/barangKeluar`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

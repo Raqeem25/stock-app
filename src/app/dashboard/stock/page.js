@@ -55,7 +55,7 @@ export default function StockPage() {
   const itemsPerPage = 10;
 
   const fetchData = async () => {
-    const res = await fetch("http://localhost:3001/stok");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/stok`);
     const data = await res.json();
     setStokList(data);
   };
@@ -103,7 +103,7 @@ export default function StockPage() {
     try {
       if (editId) {
         // Update existing item
-        const response = await fetch(`http://localhost:3001/stok/${editId}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API}/stok/${editId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newItem),
@@ -112,7 +112,7 @@ export default function StockPage() {
         if (!response.ok) throw new Error("Gagal mengupdate data");
       } else {
         // Create new item
-        const response = await fetch("http://localhost:3001/stok", {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API}/stok`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newItem),
@@ -146,7 +146,7 @@ export default function StockPage() {
   };
 
   const fetchBarang = async () => {
-    const res = await fetch("http://localhost:3001/barang");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/barang`);
     const json = await res.json();
     setBarangList(json);
   };
@@ -172,7 +172,7 @@ export default function StockPage() {
     const confirmDelete = confirm("Yakin ingin menghapus data ini?");
     if (!confirmDelete) return;
 
-    await fetch(`http://localhost:3001/stok/${id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_API}/stok/${id}`, {
       method: "DELETE",
     });
     fetchData();

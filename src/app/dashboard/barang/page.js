@@ -41,7 +41,7 @@ export default function MasterBarangPage() {
   const fetchBarang = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch("http://localhost:3001/barang");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API}/barang`);
       const data = await res.json();
       setBarangList(data);
     } catch (error) {
@@ -84,7 +84,7 @@ export default function MasterBarangPage() {
 
     try {
       if (editId) {
-        await fetch(`http://localhost:3001/barang/${editId}`, {
+        await fetch(`${process.env.NEXT_PUBLIC_API}/barang/${editId}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(newBarang),
@@ -93,7 +93,7 @@ export default function MasterBarangPage() {
       } else {
         const nextId =
           Math.max(0, ...barangList.map((item) => item.id || 0)) + 1;
-        await fetch("http://localhost:3001/barang", {
+        await fetch(`${process.env.NEXT_PUBLIC_API}/barang`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ...newBarang, id: nextId }),
@@ -121,7 +121,7 @@ export default function MasterBarangPage() {
     if (!confirmDelete) return;
 
     try {
-      await fetch(`http://localhost:3001/barang/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API}/barang/${id}`, {
         method: "DELETE",
       });
       showNotification("Data berhasil dihapus", "success");
